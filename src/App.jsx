@@ -18,7 +18,7 @@ export default function App() {
       const start = performance.now();
       const tick = (t) => {
         const elapsed = t - start;
-        // Simulated progress curve: fast to 70%, then slow
+        // Simulated progress curve: fast to ~70%, then slowly towards 98%
         const pct = Math.min(98, 100 * (1 - Math.exp(-elapsed / 1200)));
         setProgress(pct);
         raf = requestAnimationFrame(tick);
@@ -57,8 +57,8 @@ export default function App() {
     <div className="min-h-screen bg-gradient-to-b from-black to-zinc-900 text-white">
       <Hero />
 
-      <div className="relative z-10 mx-auto -mt-20 w-full max-w-5xl px-6">
-        <div className="rounded-2xl border border-white/10 bg-black/40 p-6 backdrop-blur">
+      <div className="relative z-10 mx-auto -mt-12 md:-mt-20 lg:-mt-28 w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-2xl border border-white/10 bg-black/40 p-4 sm:p-6 lg:p-8 backdrop-blur">
           <UrlForm onSubmit={handleSubmit} loading={loading} />
           {loading && <Loader progress={progress} />}
           {error && (
@@ -76,7 +76,7 @@ export default function App() {
           />
         )}
 
-        <footer className="mx-auto mt-16 max-w-5xl px-2 pb-12 text-center text-xs text-white/50">
+        <footer className="mx-auto mt-16 max-w-6xl px-2 pb-12 text-center text-xs md:text-sm text-white/50">
           This tool uses a public API to fetch video metadata and a no-watermark link. Please respect content rights.
         </footer>
       </div>
