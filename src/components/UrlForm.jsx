@@ -28,7 +28,7 @@ export default function UrlForm({ onSubmit, loading }) {
           disabled={loading}
           className="w-full sm:w-auto rounded-lg bg-white px-5 py-3 font-semibold text-black shadow-md transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {loading ? 'Processing...' : 'Download'}
+          {loading ? 'Processing...' : 'Get link'}
         </button>
       </div>
     </form>
